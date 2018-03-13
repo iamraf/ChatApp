@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---
+ * This is a part of ChatApp Project (https://github.com/h01d/ChatApp)
+ * Licensed under Apache License 2.0
+ *
+ * @author  Raf (https://github.com/h01d)
+ * @version 1.1
+ * @since   27/02/2018
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:id="@+id/user_layout"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/user"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/user_online"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/circle"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toStartOf="@+id/user_timestamp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/user_layout"
+        android:fontFamily="sans-serif-condensed"
+        android:text=""
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/user_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/user_timestamp"
+        android:layout_alignBottom="@+id/user_layout"
+        android:layout_alignStart="@+id/user_name"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text=""
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/user_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="sans-serif-condensed"
+        android:text="10/1 10:14"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

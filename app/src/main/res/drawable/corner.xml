@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---
+ * This is a part of ChatApp Project (https://github.com/h01d/ChatApp)
+ * Licensed under Apache License 2.0
+ *
+ * @author  Raf (https://github.com/h01d)
+ * @version 1.1
+ * @since   27/02/2018
+-->
+
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid
+        android:color="#fff"
+        />
+    <stroke
+        android:width="1dp"
+        android:color="#C3C3C3" />
+    <corners
+        android:radius="8dp" />
+</shape>

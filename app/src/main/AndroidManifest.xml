@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+-
+ * This is a part of ChatApp Project (https://github.com/h01d/ChatApp)
+ * Licensed under Apache License 2.0
+ *
+ * @author  Raf (https://github.com/h01d)
+ * @version 1.0
+ * @since   27/02/2018
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.h01d.chatapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".utils.Capabilities"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true">
+        <service android:name=".utils.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:theme="@style/WelcomeTheme" />
+
+        <activity
+            android:name=".activities.ProfileActivity"
+            android:theme="@style/ProfileTheme">
+            <intent-filter>
+                <action android:name="com.github.h01d.chatapp_PROFILE_TARGET_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.UsersActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/UsersTheme" />
+
+        <activity
+            android:name=".activities.ChatActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/ChatTheme">
+            <intent-filter>
+                <action android:name="com.github.h01d.chatapp_CHAT_TARGET_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.FullScreenActivity"
+            android:theme="@style/ProfileTheme"/>
+    </application>
+
+</manifest>

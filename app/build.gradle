@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+/**
+ * This is a part of ChatApp Project (https://github.com/h01d/ChatApp)
+ * Licensed under Apache License 2.0
+ *
+ * @author Raf (https://github.com/h01d)
+ * @version 1.1
+ * @since 27/02/2018
+ */
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.github.h01d.chatapp"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 2
+        versionName "1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:support-v4:27.0.2'
+    implementation 'com.android.support:design:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.google.firebase:firebase-database:11.8.0'
+    implementation 'com.google.firebase:firebase-storage:11.8.0'
+    implementation 'com.firebaseui:firebase-ui-database:3.1.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.google.firebase:firebase-crash:11.8.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //https://github.com/square/picasso (Apache License 2.0)
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+    //https://github.com/square/okhttp (Apache License 2.0)
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+    //https://github.com/hdodenhof/CircleImageView (Apache License 2.0)
+    compile 'com.sothree.slidinguppanel:library:3.4.0'
+    //https://github.com/umano/AndroidSlidingUpPanel (Apache License 2.0)
+    compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
+    //https://github.com/dmytrodanylyk/android-process-button (MIT)
+    compile 'com.github.XunMengWinter:CircularAnim:0.3.4'
+    //https://github.com/XunMengWinter/CircularAnim (No license)
+    compile 'com.github.florent37:diagonallayout:1.0.8'
+    //https://github.com/florent37/DiagonalLayout (Apache License 2.0)
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    //https://github.com/flavioarfaria/KenBurnsView (Apache License 2.0)
+    compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+    //https://github.com/ogaclejapan/SmartTabLayout (Apache License 2.0)
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+    //https://github.com/ogaclejapan/SmartTabLayout (Apache License 2.0)
+    compile 'me.jahirfiquitiva:FABsMenu:1.1.1'
+    //https://github.com/jahirfiquitiva/FABsMenu (Apache License 2.0)
+}
+
+
+apply plugin: 'com.google.gms.google-services'

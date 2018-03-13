@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!---
+ * This is a part of ChatApp Project (https://github.com/h01d/ChatApp)
+ * Licensed under Apache License 2.0
+ *
+ * @author  Raf (https://github.com/h01d)
+ * @version 1.1
+ * @since   27/02/2018
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff">
+
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:id="@+id/profile_diagonal"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        app:diagonal_angle="15"
+        app:diagonal_direction="left"
+        app:diagonal_position="bottom">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/profile_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_cover"
+            android:visibility="visible" />
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:elevation="10dp"
+        android:src="@drawable/user"
+        app:civ_border_color="#fff"
+        app:civ_border_width="2dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/profile_image"
+        android:elevation="2dp">
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed"
+            android:text="User Name"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/profile_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/profile_name"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="&quot;Welcome to my Profile!&quot;"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+    <jahirfiquitiva.libs.fabsmenu.FABsMenuLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="11dp"
+        app:fabs_menu_overlayColor="#4d000000"
+        app:fabs_menu_clickableOverlay="true"
+        tools:layout_behavior="@string/fabs_menu_layout_behavior">
+
+        <jahirfiquitiva.libs.fabsmenu.FABsMenu
+            android:id="@+id/profile_fabs_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:clipChildren="false"
+            app:fab_menuMargins="16dp"
+            app:fab_moreButtonPlusIcon="@drawable/ic_add_white_24dp"
+            app:fab_moreButtonBackgroundColor="@color/colorRed"
+            app:fab_moreButtonRippleColor="@color/colorDarkRed"
+            app:fab_moreButtonSize="normal"
+            app:fab_labelsPosition="left"
+            app:fab_expandDirection="up">
+
+        </jahirfiquitiva.libs.fabsmenu.FABsMenu>
+
+    </jahirfiquitiva.libs.fabsmenu.FABsMenuLayout>
+
+</RelativeLayout>
